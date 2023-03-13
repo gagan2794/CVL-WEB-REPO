@@ -37,7 +37,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     void remoteLambdaTestinSafari(ThreadLocal<Map<String,Object>>  threadMap, String testName) {
         try {
             String username = "shubhamr";
-            String accessKey = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh";
+            String accessKey = "";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -78,7 +78,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
        void remoteLambdaTestinChrome(ThreadLocal<Map<String,Object>> threadMap, String testName) {
         try {
             String username = "shubhamr";
-            String accessKey = "";
+            String accessKey = System.getProperty("userkey");;
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -105,7 +105,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("driver_version", "100.0");
             ltOptions.put("resolution", "1920x1080");
             ltOptions.put("network", false);
-           // ltOptions.put("tunnel", true);
+           ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
             //caps.setCapability("tunnelName", "SharedTunnel");
             threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
