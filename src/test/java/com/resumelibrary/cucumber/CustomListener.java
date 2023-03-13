@@ -20,8 +20,8 @@ public class CustomListener extends Utility implements ITestListener, IExecution
     public void onExecutionStart() {
         tunnelObject=new ArrayList<Tunnel>();
         boolean flag=false;
-        String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-        String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+        String username = "shubhamr";
+        String accessKey = "";
         int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("nooftunnels")));
         for(int j=0;j<noOfTunnels;j++){
 

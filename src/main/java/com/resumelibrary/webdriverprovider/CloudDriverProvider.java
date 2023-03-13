@@ -34,10 +34,10 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
        PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
     }
 
-    void remoteLambdaTestinSafari(Map threadMap, String testName) {
+    void remoteLambdaTestinSafari(ThreadLocal<Map<String,Object>>  threadMap, String testName) {
         try {
-            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            String username = "shubhamr";
+            String accessKey = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -52,7 +52,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             browserOptions.setPlatformName("MacOS Ventura");
             browserOptions.setBrowserVersion("16.0");
             HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            ltOptions.put("build", "RL RegressionSafari");
             ltOptions.put("project", project);
             ltOptions.put("name", testName);
             ltOptions.put("console", true);
@@ -62,23 +62,23 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
            // ltOptions.put("driver_version", "100.0");
             //ltOptions.put("resolution", "1920x1080");
             ltOptions.put("network", false);
-            ltOptions.put("tunnel", true);
-            ltOptions.put("tunnelName", "RLWebRegressionTunnel");
+           // ltOptions.put("tunnel", true);
+          //  ltOptions.put("tunnelName", "RLWebRegressionTunnel");
             ltOptions.put("w3c", true);
           
             browserOptions.setCapability("LT:Options", ltOptions);
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), browserOptions));
-            threadLocalMap.set(threadMap);
+            threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), browserOptions));
+            threadLocalMap.set(threadMap.get());
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-       void remoteLambdaTestinChrome(Map threadMap, String testName) {
+       void remoteLambdaTestinChrome(ThreadLocal<Map<String,Object>> threadMap, String testName) {
         try {
-            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            String username = "shubhamr";
+            String accessKey = "";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -95,7 +95,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.setCapability("browserVersion", "100.0");
 
             HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", new DateTime().hourOfDay().get());
+            ltOptions.put("build", "Chrome updated one");
             ltOptions.put("project", project);
             ltOptions.put("name", testName);
             ltOptions.put("console", "info");
@@ -105,11 +105,11 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("driver_version", "100.0");
             ltOptions.put("resolution", "1920x1080");
             ltOptions.put("network", false);
-            ltOptions.put("tunnel", true);
+           // ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
-            caps.setCapability("tunnelName", "SharedTunnel");
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
-            threadLocalMap.set(threadMap);
+            //caps.setCapability("tunnelName", "SharedTunnel");
+            threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
+            threadLocalMap.set(threadMap.get());
 
 
         } catch (Exception e) {
@@ -117,7 +117,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-     void remoteLambdaTestinFirefox(Map threadMap, String testName) {
+     void remoteLambdaTestinFirefox(ThreadLocal<Map<String,Object>>  threadMap, String testName) {
         try {
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
@@ -150,8 +150,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
             caps.setCapability("tunnelName", "RLWebRegressionTunnel");
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
-            threadLocalMap.set(threadMap);
+            threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
+            threadLocalMap.set(threadMap.get());
 
 
         } catch (Exception e) {
@@ -159,7 +159,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-     void remoteBrowserStackChrome(Map threadMap, String testName) {
+     void remoteBrowserStackChrome(ThreadLocal<Map<String,Object>>  threadMap, String testName) {
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -191,7 +191,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-      void browserStackCommonCapblts(Map threadMap, String buildId, String driverURL, DesiredCapabilities caps, HashMap<String, Object> browserstackOptions) throws MalformedURLException {
+      void browserStackCommonCapblts(ThreadLocal<Map<String,Object>>  threadMap, String buildId, String driverURL, DesiredCapabilities caps, HashMap<String, Object> browserstackOptions) throws MalformedURLException {
 
         browserstackOptions.put("debug", "true");  // for enabling visual logs
         browserstackOptions.put("consoleLogs", "info");  // to enable console logs at the info level. You can also use other log levels here
@@ -203,11 +203,11 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         browserstackOptions.put("local", "false");
         browserstackOptions.put("buildName", buildId);
         caps.setCapability("bstack:options", browserstackOptions);
-        threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
-        threadLocalMap.set(threadMap);
+        threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
+        threadLocalMap.set(threadMap.get());
     }
 
-     void remoteBrowserStackFireFox(Map threadMap, String testName) {
+     void remoteBrowserStackFireFox(ThreadLocal<Map<String,Object>>  threadMap, String testName) {
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);

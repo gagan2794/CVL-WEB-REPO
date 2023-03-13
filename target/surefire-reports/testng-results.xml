@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-03-13T16:31:21 IST" name="SeleniumGridDocker" finished-at="2023-03-13T16:32:04 IST" duration-ms="42691">
+    <groups>
+      <group name="cucumber">
+        <method signature="CustomAbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper,org.testng.ITestContext)[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" name="runScenario" class="com.resumelibrary.cucumber.CustomAbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-03-13T16:31:21 IST" name="Chrome Test1" finished-at="2023-03-13T16:32:04 IST" duration-ms="42691">
+      <class name="com.resumelibrary.cucumber.CucumberTestRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" started-at="2023-03-13T16:31:21 IST" name="setUpClass" finished-at="2023-03-13T16:31:22 IST" duration-ms="509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" started-at="2023-03-13T16:31:22 IST" name="setUpClass" finished-at="2023-03-13T16:31:22 IST" duration-ms="123" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2f4b3231]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setupClassName(org.testng.ITestContext)[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" started-at="2023-03-13T16:31:22 IST" name="setupClassName" finished-at="2023-03-13T16:31:22 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2f4b3231]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClassName -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper,org.testng.ITestContext)[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" started-at="2023-03-13T16:31:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-13T16:32:04 IST" duration-ms="41762" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying job posting spend type is ACCOUNT not CLIENT"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Data setup for candidate tests"]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@2f4b3231]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"*[name='username']"}
+  (Session info: chrome=100.0.4896.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.0.1', java.version: '11.0.18'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [2b0f30e9732bb72957c85f1e429ca4a7, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\ltuser\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59330}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, performance: false, platformName: WINDOWS, proxy: Proxy(), se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, video: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b0f30e9732bb72957c85f1e429ca4a7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='username']"}
+  (Session info: chrome=100.0.4896.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.0.1', java.version: '11.0.18'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [2b0f30e9732bb72957c85f1e429ca4a7, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.127, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\ltuser\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59330}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, performance: false, platformName: WINDOWS, proxy: Proxy(), se:cdpVersion: 100.0.4896.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, video: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b0f30e9732bb72957c85f1e429ca4a7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy29.sendKeys(Unknown Source)
+at com.resumelibrary.admintest.misc.MiscPage.loginAsAdminUser(MiscPage.java:116)
+at com.resumelibrary.cucumber.stepdefinitions.admin.misc.Misc.iLoginAsAnAdminUser(Misc.java:31)
+at ✽.I login as an admin user(file:///Users/shubhamr/Downloads/rl-selenium-web/./src/test/java/resources/featurefiles/aaajobposting/AADataSetup.feature:6)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.resumelibrary.cucumber.CucumberTestRunner@30f5a68a]" started-at="2023-03-13T16:32:04 IST" name="tearDownClass" finished-at="2023-03-13T16:32:04 IST" duration-ms="245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.resumelibrary.cucumber.CucumberTestRunner -->
+    </test> <!-- Chrome Test1 -->
+  </suite> <!-- SeleniumGridDocker -->
+</testng-results>
