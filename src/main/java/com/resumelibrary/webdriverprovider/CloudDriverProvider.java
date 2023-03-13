@@ -95,7 +95,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.setCapability("browserVersion", "100.0");
 
             HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", "Chrome updated one");
+            ltOptions.put("build", "Chrome updated 2");
             ltOptions.put("project", project);
             ltOptions.put("name", testName);
             ltOptions.put("console", "info");
@@ -106,6 +106,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("resolution", "1920x1080");
             ltOptions.put("network", false);
            ltOptions.put("tunnel", true);
+            ltOptions.put("idleTiemout","1800");
             caps.setCapability("LT:Options", ltOptions);
             //caps.setCapability("tunnelName", "SharedTunnel");
             threadMap.get().put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
