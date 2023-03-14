@@ -95,7 +95,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.setCapability("browserVersion", "100.0");
 
             HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", "Chrome updated 2");
+            ltOptions.put("build", "Chrome updated 3");
             ltOptions.put("project", project);
             ltOptions.put("name", testName);
             ltOptions.put("console", "info");
