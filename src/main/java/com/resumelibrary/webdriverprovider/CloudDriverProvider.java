@@ -35,7 +35,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
 
     void remoteLambdaTestinSafari(Map threadMap, String testName) {
-//         try {
+        try {
 //             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
 //             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
         
