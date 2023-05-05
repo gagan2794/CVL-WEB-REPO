@@ -36,12 +36,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     void remoteLambdaTestinSafari(Map threadMap, String testName) {
         try {
-//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
         
         
-            String username = "aakashv";
-            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
+//             String username = "aakashv";
+//             String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -81,12 +81,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
        void remoteLambdaTestinChrome(Map threadMap, String testName) {
         try {
-//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
             
             
-            String username = "aakashv";
-            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
+//             String username = "aakashv";
+//             String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -127,12 +127,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
      void remoteLambdaTestinFirefox(Map threadMap, String testName) {
         try {
-//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
             
             
-            String username = "aakashv";
-            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
+//             String username = "aakashv";
+//             String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
