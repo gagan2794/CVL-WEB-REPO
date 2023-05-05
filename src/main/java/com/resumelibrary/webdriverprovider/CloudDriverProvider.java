@@ -35,9 +35,13 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
 
     void remoteLambdaTestinSafari(Map threadMap, String testName) {
-        try {
-            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+//         try {
+//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+        
+        
+            String username = "aakashv";
+            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -63,7 +67,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             //ltOptions.put("resolution", "1920x1080");
             ltOptions.put("network", false);
             ltOptions.put("tunnel", true);
-            ltOptions.put("tunnelName", "RLWebRegressionTunnel");
+            ltOptions.put("tunnelName", "SharedSSHTunnel");
             ltOptions.put("w3c", true);
           
             browserOptions.setCapability("LT:Options", ltOptions);
@@ -77,8 +81,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
        void remoteLambdaTestinChrome(Map threadMap, String testName) {
         try {
-            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            
+            
+            String username = "aakashv";
+            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -107,7 +115,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("network", false);
             ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
-            caps.setCapability("tunnelName", "SharedTunnel");
+            caps.setCapability("tunnelName", "SharedSSHTunnel");
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
             threadLocalMap.set(threadMap);
 
@@ -119,8 +127,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
      void remoteLambdaTestinFirefox(Map threadMap, String testName) {
         try {
-            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+//             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+//             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+            
+            
+            String username = "aakashv";
+            String accessKey = "1gaoF0XPWCImJfP5fI5LrQDUwJhrolcWh0qmm5ufBB4Wivelsx";
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -149,7 +161,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("network", false);
             ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
-            caps.setCapability("tunnelName", "RLWebRegressionTunnel");
+            caps.setCapability("tunnelName", "SharedSSHTunnel");
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
             threadLocalMap.set(threadMap);
 
