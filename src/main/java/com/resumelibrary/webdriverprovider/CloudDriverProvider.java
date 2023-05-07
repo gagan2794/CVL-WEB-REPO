@@ -77,7 +77,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
        void remoteLambdaTestinChrome(ThreadLocal<Map<String,Object>> threadMap, String testName) {
         try {
-            String username = "shubhamr";
+            String username = System.getProperty("userName");
             String accessKey = System.getProperty("userkey");;
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
